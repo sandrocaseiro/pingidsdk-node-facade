@@ -1,0 +1,502 @@
+{
+	"info": {
+		"_postman_id": "e72aad60-325d-4dfa-a3ee-679c994ee93a",
+		"name": "PingID SDK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create E-mail Config",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"emailSubject\": \"Autenticacao\",\n\t\"type\": \"auth\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/email/config",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"email",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete E-mail Config",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4400/email/config",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"email",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4400/users/user1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"user1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User E-mail Pair",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"recipient\": \"sandro.caseiro@iteris.com.br\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user1/email/pair",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1",
+						"email",
+						"pair"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "E-mail OTP",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"otp\": \"702703\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user1/email/pair/pairing_webs_df34a74c-86ff-4a51-8d11-2f40355bc0c7/otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1",
+						"email",
+						"pair",
+						"pairing_webs_df34a74c-86ff-4a51-8d11-2f40355bc0c7",
+						"otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User SMS Pair",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phoneNumber\": \"+5511984603306\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user1/sms/pair",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1",
+						"sms",
+						"pair"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get E-mail OTP",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"otp\": \"337139\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user1/email/pair/pairing_webs_60c54171-2743-4c50-8889-052435cd8f02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1",
+						"email",
+						"pair",
+						"pairing_webs_60c54171-2743-4c50-8889-052435cd8f02"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Device Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payload\": \"eyJhcHBJZCI6IjhmMjdkZTllLTNiMmUtNGVjNy1iMGFjLWNiYjI1YWJjZGQ3MCIsImRldmljZUZwIjoiTm1NeE1UQTNNemd4TlRReE56Um1aUVx1MDAzZFx1MDAzZCIsImRldmljZU5hbWUiOiJnb29nbGUgQW5kcm9pZCBTREsgYnVpbHQgZm9yIHg4NiIsImRldmljZVR5cGUiOiJBbmRyb2lkIiwib3NfdmVyc2lvbiI6IjEwIiwicGF5bG9hZFZlcnNpb24iOjIsInByZXR0eV9tb2RlbCI6Imdvb2dsZSBBbmRyb2lkIFNESyBidWlsdCBmb3IgeDg2IiwicmFuZG9tIjoiOGRiMTcxYjNlNGI3NDZjZmFlZTliY2RlNDc0YjljY2IiLCJzZGtfdmVyc2lvbiI6IjEuNSIsInRpbWVfc3RhbXAiOjE1OTI1OTIyMTg1NTR9\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user2/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user2",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Device Registration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4400/users/user1/registration/569281019718",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1",
+						"registration",
+						"569281019718"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User's Devices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4400/users/user1/devices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User's Device",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4400/users/user3/devices/75bc617b-1622-b9e3-75bc-617b1622b9e3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user3",
+						"devices",
+						"75bc617b-1622-b9e3-75bc-617b1622b9e3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User's Seen Devices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4400/users/user3/seendevices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user3",
+						"seendevices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User's Seen Device",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"deviceType\": \"Android\",\n    \"deviceName\": \"google Android SDK built for x86\",\n    \"firstSeenAt\": 1591817065808,\n    \"accessTime\": 1592333158499,\n    \"ignored\": false,\n    \"blocked\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user3/seendevices/NmMxMTA3MzgxNTQxNzRmZQ==",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user3",
+						"seendevices",
+						"NmMxMTA3MzgxNTQxNzRmZQ=="
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payload\": \"eyJhbGciOiJSUzI1NiJ9.eyJhcHBJZCI6IjhmMjdkZTllLTNiMmUtNGVjNy1iMGFjLWNiYjI1YWJjZGQ3MCIsImRldmljZUZwIjoiTm1NeE1UQTNNemd4TlRReE56Um1aUVx1MDAzZFx1MDAzZCIsImRldmljZUlkIjoiNzlhZDEzNWEtMWI3My00MTY5LTc5YWQtMTM1YTFiNzM0MTY5IiwiZGV2aWNlTmFtZSI6Imdvb2dsZSBBbmRyb2lkIFNESyBidWlsdCBmb3IgeDg2IiwiZGV2aWNlVHlwZSI6IkFuZHJvaWQiLCJvc192ZXJzaW9uIjoiMTAiLCJwYXlsb2FkVmVyc2lvbiI6MiwicHJldHR5X21vZGVsIjoiZ29vZ2xlIEFuZHJvaWQgU0RLIGJ1aWx0IGZvciB4ODYiLCJyYW5kb20iOiI4NzY0YTE5ZjljYjdiMjQzMmU4YWQyYTliYjk3MzhjNCIsInNka192ZXJzaW9uIjoiMS41IiwidGltZV9zdGFtcCI6MTU5MjU5MjQxNjcwMH0.re1BBhJvzFzQlYgOaKtpeIjRuSBs0_t2LWkZxt_uTo-Y2uwasXm7g8qe0iiSGM6Uvvzus7Z6ZqBBmiroDPWIvPFFj10MPQ5afHXxP2g-cAk7APBri8Eg473CoV9HiVCHqTIuC0tRjsciu5TWbis_XYVy_XKjR9vnjSAG6ekgGVTKi4yeCCcJVxfaFAqZFKn4kH9BpnyUmwrct_r8Xv4n_fKf6T4OGywPSYz1By7bNouMYonk1f6oyGwrDQhq8y8t8uNt2gpOutIuBmglPDsz37Q2Jw0BaQrrfmBjRk2-nmHb2IuDU7gDydgxFBueaFQCE2BJnvL3xGRWEvcVgkiSmA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user2/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user2",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User E-mail Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4400/users/user1/auth/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1",
+						"auth",
+						"email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Authentication",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"otp\": \"713664\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user2/auth/webs_8fe06176-f3d5-4759-acfe-22e699ab618b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user2",
+						"auth",
+						"webs_8fe06176-f3d5-4759-acfe-22e699ab618b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication OTP",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"otp\": \"373859\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4400/users/user1/auth/webs_523702a4-b715-43d1-a175-5450f238071b/otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4400",
+					"path": [
+						"users",
+						"user1",
+						"auth",
+						"webs_523702a4-b715-43d1-a175-5450f238071b",
+						"otp"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
